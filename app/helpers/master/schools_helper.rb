@@ -1,0 +1,2 @@
+module Master::SchoolsHelper
+end

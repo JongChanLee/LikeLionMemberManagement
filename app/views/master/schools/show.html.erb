@@ -1,0 +1,20 @@
+<section class="master-schools">
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Schools - Show
+    </div>
+    <%= link_to raw("<div class='shadow back'>되돌아가기</div>"), master_schools_path %>
+  </div>
+
+  <article class="show">
+    <div class="school_info">
+      <div class="name"><%= @school.name %></div>
+      <div class="countings">총 운영진 : <span class="number"><%= @school.users.size %></span> 총 참여생 :
+        <span class="number"><%= @school.members.size %></span></div>
+    </div>
+    <div class="content">
+      <div class="organizers"></div>
+      <div class="members"></div>
+    </div>
+  </article>
+</section>

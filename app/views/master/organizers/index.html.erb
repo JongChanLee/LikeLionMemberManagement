@@ -1,0 +1,54 @@
+<section class="master-organizers">
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Organizers
+    </div>
+    <%= link_to raw("<div class='shadow add'>+</div>"), new_master_organizer_path %>
+  </div>
+
+  <article class="index">
+    <div class="dashboard">
+      <div class="item_group shadow">
+        <div class="item">
+          등록된 운영진: <span class="number"><%= @users.count %></span>명
+        </div>
+      </div>
+      <div class="item_group shadow">
+        <div class="item">
+          가입한 운영진: <span class="number"><%= @join_users_count %></span>명
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <table class="shadow wrapper">
+        <thead>
+        <tr>
+          <th>이름</th>
+          <th>학교</th>
+          <th>이메일</th>
+          <th>상태</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @users.length.times do |i| %>
+            <tr <%= "class=even" if i % 2 == 1 %>>
+              <% if @users[i].instance_of? Master %>
+                  <td><%= @users[i].name %></td>
+                  <td><%= @users[i].school.name %></td>
+              <% else %>
+                  <td><%= link_to "#{@users[i].name}", master_organizer_path(@users[i]) %></td>
+                  <td><%= link_to "#{@users[i].school.name}", master_school_path(@users[i].school) %></td>
+              <% end %>
+              <td><%= @users[i].email %></td>
+              <td><%= @users[i].status %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%= render 'partial/pagenation' %>
+
+
+  </article>
+</section>

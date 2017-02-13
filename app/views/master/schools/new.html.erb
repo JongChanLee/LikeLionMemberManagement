@@ -1,0 +1,16 @@
+<section class="master-schools">
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Schools - New
+    </div>
+    <%= link_to raw("<div class='shadow back'>되돌아가기</div>"), master_schools_path %>
+  </div>
+
+  <article class="new">
+    <%= form_tag master_schools_path, method: :post, id: 'new-schools' %>
+
+    <%= text_area_tag "schools", nil, placeholder: '새로 추가할 학교를 입력하세요. 구분은 엔터로 합니다.' %>
+
+    <%= submit_tag '추가' %>
+  </article>
+</section>

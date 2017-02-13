@@ -1,0 +1,109 @@
+// Place all the styles related to the master/schools controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.master-schools {
+  .index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .count {
+      background-color: $white;
+      margin-bottom: 0.5rem;
+      display: inline;
+      padding: 0.5rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      span {
+        font-size: 2rem;
+        color: $highlight;
+      }
+    }
+    table {
+      margin-top: 2rem;
+      border-collapse: collapse;
+      line-height: 1.5;
+      background-color: $white;
+      th {
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 0.2rem 1rem;
+        font-weight: 700;
+        color: #fff;
+        background: $highlight;
+      }
+      th:first-child {
+        width: 150px;
+      }
+      tr {
+        background-color: $white;
+      }
+      td {
+        padding: 10px;
+        vertical-align: top;
+        a {
+          font-weight: 700;
+          color: $highlight;
+        }
+        a:hover {
+          color: darken($highlight, 35%);
+        }
+      }
+      td:nth-child(2), td:nth-child(3) {
+        text-align: center;
+      }
+      .even {
+        background-color: lighten($highlight, 35%);
+      }
+    }
+  }
+  .new {
+    display: flex;
+    justify-content: center;
+    #new-schools {
+      display: flex;
+      flex-direction: column;
+      background-color: lighten($highlight, 25%);
+      -webkit-box-shadow: 0px 1px 1px 1px gray;
+      box-shadow: 0px 1px 1px 1px gray;
+      * {
+        width: 350px;
+      }
+      textarea {
+        margin: 0.5rem;
+        height: 13rem;
+        background-color: lighten($highlight, 25%);
+        border: none;
+        border-bottom: 0.5px solid gray;
+      }
+      textarea:focus {
+        border: none;
+        overflow: auto;
+        outline: none;
+        border-bottom: 1px solid $highlight;
+        background-color: lighten($highlight, 35%);
+      }
+      input[type=submit] {
+        padding: 0.4rem 0;
+        width: 100%;
+        border: none;
+        -webkit-box-shadow: 0px 1px 1px 1px gray;
+        box-shadow: 0px 1px 1px 1px gray;
+        color: $white;
+        background-color: lighten($highlight, 10%);
+        font-weight: 900;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      input[type=submit]:hover {
+        color: lighten($highlight, 35%);
+        background-color: darken($highlight, 10%);
+        -webkit-box-shadow: 0px 1px 2px 2px gray;
+        box-shadow: 0px 1px 2px 2px gray;
+      }
+    }
+  }
+  .show {
+
+  }
+}

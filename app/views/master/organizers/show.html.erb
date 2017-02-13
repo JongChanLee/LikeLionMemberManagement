@@ -1,0 +1,35 @@
+<section class="master-organizers">
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Organizers - Show
+    </div>
+    <%= link_to raw("<div class='shadow back'>되돌아가기</div>"), master_organizers_path %>
+  </div>
+
+  <article class="show">
+    <div class="organizer-info shadow">
+      <div class="name"><%= @organizer.name %></div>
+      <div class="basic">
+        <%= @organizer.school.name %> <br>
+        <%= @organizer.email %> <br>
+        상태 : <%= @organizer.status %>
+      </div>
+      <div class="date">
+        <div>등록일<br><%= @organizer.created_at.to_formatted_s(:short) %></div>
+        <div>상태변경일<br><%= @organizer.updated_at.to_formatted_s(:short) %></div>
+      </div>
+      <div class="btn-group">
+        <% if @organizer.status == "block" %>
+            <%= link_to '정상처리', master_organizer_path(@organizer), method: :patch %>
+        <% else %>
+            <%= link_to '블럭처리', master_organizer_path(@organizer), method: :patch %>
+        <% end %>
+        <%= link_to '삭제', master_organizer_path(@organizer), method: :delete, data: {confirm: "'#{@organizer.school.name}의 #{@organizer.name}'를(을) 삭제시키겠습니까? (삭제된 데이터는 복원되지 않습니다.)"} %>
+      </div>
+    </div>
+    <div class="management shadow">
+      관리부1 <br>
+      관리부2
+    </div>
+  </article>
+</section>

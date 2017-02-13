@@ -1,0 +1,39 @@
+<section>
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Organizers - New
+    </div>
+    <%= link_to raw("<div class='shadow back'>되돌아가기</div>"), master_organizers_path %>
+  </div>
+
+  <article>
+    <%= form_tag master_organizers_path, method: :post, id: "new_organizer" %>
+    <div class="inputcontainer">
+      <div>
+        <%= select_tag "school_id[]", options_from_collection_for_select(schools, "id", "name") %>
+
+        <%= text_area_tag "name[]", nil, placeholder: '학교를 선택한 후 이름을 엔터로 구분하여 입력하세요' %>
+      </div>
+    </div>
+    <div class="buttonarea">
+      <button type="button" id="addNewSchool">학교 추가</button>
+      <%= submit_tag '등록' %>
+    </div>
+  </article>
+</section>
+
+<div style="display: none;" id="new_input_form">
+  <div>
+    <%= select_tag "school_id[]", options_from_collection_for_select(schools, "id", "name") %>
+
+    <%= text_area_tag "name[]", nil, placeholder: '학교를 선택한 후 이름을 엔터로 구분하여 입력하세요' %>
+  </div>
+</div>
+<!--이 블럭 때문에 데이터가 배열로 하나 더 들어가는 문제가 있음 size - 1 로 계산해야함 -->
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("#addNewSchool").click(function () {
+            $(".inputcontainer").append($("#new_input_form").html())
+        });
+    });
+</script>

@@ -1,0 +1,281 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+$header: #275575;
+$white: #ffffff;
+$activate: #33f9b6;
+$highlight: #d2674e;
+
+.wrapper_wide {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper_skinny {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.menu_clicked {
+  background-color: lighten($header, 50%);
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 1px 1px 1px gray;
+  box-shadow: 0px 1px 1px 1px gray;
+}
+
+.flash {
+  right: 0;
+  top: 50vh;
+  z-index: 99999;
+  position: absolute;
+  background: $activate;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+// -------------------
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+}
+
+.fix {
+  position: fixed;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: $header;
+  height: 100vh;
+  min-width: 210px;
+  #logo {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 3rem;
+    text-align: center;
+    color: $white;
+  }
+  #logo:hover {
+    color: $highlight;
+  }
+  .profile {
+    background-color: darken($header, 5%);
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-around;
+    .wrapper_wide {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .avatar {
+        background-image: url("logo.png");
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-position: center;
+      }
+      .info {
+        font-size: 1.1rem;
+        color: #ebebeb;
+        .school {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    .menu {
+      text-align: center;
+      a {
+        color: $white
+      }
+      a:hover {
+        color: $highlight;
+      }
+    }
+  }
+  nav {
+    padding-top: 2rem;
+    a {
+      display: block;
+      color: darken($white, 5%);
+      .menu_item {
+        padding: 0.5rem 1.2rem;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    a:hover {
+      color: $highlight;
+    }
+
+  }
+}
+
+section {
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ebebeb;
+  margin-left: 210px;
+  .section_header {
+    display: flex;
+    background-color: $white;
+    padding: 0.5rem 1rem;
+    width: auto;
+    left: 210px;
+    right: 0;
+    justify-content: space-between;
+    .menu_name {
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+      color: $highlight;
+      font-weight: 700;
+    }
+    .add {
+      width: 17px;
+      height: 17px;
+      border-radius: 100%;
+      padding: 0.5rem 0.5rem;
+      background-color: lighten($highlight, 10%);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.1rem;
+      font-size: 1.1rem;
+      margin-right: 3rem;
+    }
+    .add:hover {
+      background-color: darken($highlight, 10%);
+      -webkit-box-shadow: 0px 1px 2px 2px gray;
+      box-shadow: 0px 1px 2px 2px gray;
+    }
+    .back {
+      color: $white;
+      border-radius: 1rem;
+      padding: 0.5rem 0.5rem;
+      background-color: lighten($highlight, 10%);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.1rem;
+      font-size: 1.1rem;
+      margin-right: 3rem;
+    }
+    .back:hover {
+      color: lighten($highlight, 35%);
+      background-color: darken($highlight, 10%);
+      -webkit-box-shadow: 0px 1px 2px 2px gray;
+      box-shadow: 0px 1px 2px 2px gray;
+    }
+  }
+  article {
+    margin-top: 60px;
+    padding: 1.5rem 4rem;
+    .group {
+      background-color: $white;
+      font-size: 1.5rem;
+      display: flex;
+      padding: 0.5rem 1rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      flex-wrap: wrap;
+      .member {
+        font-weight: 500;
+        margin: 0.2rem 0.4rem;
+        padding: 0.2rem 0.4rem;
+        font-size: 1rem;
+        -webkit-box-shadow: 0px 1px 1px 1px gray;
+        box-shadow: 0px 1px 1px 1px gray;
+      }
+    }
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      .item_group {
+        width: 46%;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .item {
+          color: darken($white, 60%);
+          padding: 0.5rem 1rem;
+          font-size: 1.5rem;
+          border-bottom: 0.5px solid darken($white, 20%);
+          .number {
+            font-size: 2rem;
+            color: $highlight;
+          }
+          .subnumber {
+            font-size: 1rem;
+          }
+        }
+        .item:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+  }
+  .pagination {
+    padding-top: 1rem;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color {
+
+    }
+    * {
+      border-radius: 0.2rem;
+      padding: 0.1rem 0.2rem;
+      background-color: lighten($highlight, 15%);
+      -webkit-box-shadow: 0px 1px 1px 1px gray;
+      box-shadow: 0px 1px 1px 1px gray;
+    }
+    a {
+      color: $white;
+    }
+    a:hover {
+      background-color: darken($highlight, 20%);
+      color: $activate
+    }
+    .disabled {
+      background-color: darken($white, 10%);
+      color: darken($white, 30%);
+    }
+    .current {
+      font-weight: 700;
+      background-color: $highlight;
+    }
+
+  }
+}
+
+@import "nomalize";
+@import "form";
+@import "master/organizers";
+@import "master/schools";

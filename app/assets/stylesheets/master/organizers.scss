@@ -1,0 +1,109 @@
+.master-organizers {
+  .index {
+    .table {
+      table {
+        margin-top: 2rem;
+        border-collapse: collapse;
+        text-align: left;
+        line-height: 1.5;
+        background-color: $white;
+        thead {
+          th {
+            text-align: center;
+            font-size: 1.3rem;
+            padding: 10px;
+            font-weight: 700;
+            color: #fff;
+            background: $highlight;
+          }
+        }
+        tr {
+          background-color: $white;
+        }
+        td {
+          padding: 10px;
+          vertical-align: top;
+          a {
+            font-weight: 700;
+            color: $highlight;
+          }
+          a:hover {
+            color: darken($highlight, 35%);
+          }
+        }
+        td:last-child {
+          width: 50px;
+        }
+        .even {
+          background-color: lighten($highlight, 35%);
+        }
+      }
+    }
+  }
+
+  .show {
+    display: flex;
+
+    .organizer-info {
+      box-sizing: border-box;
+      width: 30%;
+      margin: 0 2.5%;
+      background-color: $white;
+      font-size: 1.1rem;
+      div {
+        border-bottom: 1px solid gray;
+        padding: 0.5rem;
+      }
+      .name {
+        font-weight: 700;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .basic {
+        color: darken(gray, 15%);
+      }
+      .date {
+        padding: 0 0.2rem;
+        display: flex;
+        font-size: 0.8rem;
+        color: gray;
+        div {
+          flex: 1;
+          border-bottom: none;
+        }
+        div:first-child {
+          border-right: 1px solid gray;
+        }
+      }
+
+      .btn-group {
+        padding: 0;
+        display: flex;
+        font-size: 1.1rem;
+        a {
+          text-align: center;
+          flex: 1;
+          display: block;
+          color: $white;
+          padding: 0.3rem 0.5rem;
+          background-color: lighten($highlight, 10%);
+          font-weight: 900;
+        }
+        a:first-child {
+          border-right: 1px solid gray;
+        }
+        a:hover {
+          color: lighten($highlight, 35%);
+          background-color: darken($highlight, 10%);
+        }
+
+      }
+
+    }
+    .management {
+      box-sizing: border-box;
+      width: 60%;
+      margin: 0 2.5%;
+    }
+  }
+}

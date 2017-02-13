@@ -1,0 +1,39 @@
+<section>
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Dashboard
+    </div>
+  </div>
+  <article>
+    <div class="group shadow">
+      <%= current_user.school.name %> 운영진: <%= @schools_organizers.count %>명 -
+      <% @schools_organizers.each do |organizer| %>
+          <div class="member"><%= organizer.name %></div>
+      <% end %>
+    </div>
+
+    <div class="dashboard">
+      <div class="item_group shadow">
+        <div class="item">
+          학교: <span class="number"><%= @schools_count %></span>개
+        </div>
+        <div class="item">
+          운영진: <span class="number"><%= @users_count %></span>명
+          <span class="subnumber">- 가입: <%= @join_users_count %>명</span>
+        </div>
+        <div class="item">
+          참여생: <span class="number"><%= @members_count %></span>명
+        </div>
+      </div>
+      <div class="item_group shadow">
+        <div class="item">
+          공지: <span class="number"><%= @notices_count %></span>개
+        </div>
+        <div class="item">
+          관리부: <span class="number"><%= @managements_count %></span>개
+        </div>
+      </div>
+    </div>
+
+  </article>
+</section>

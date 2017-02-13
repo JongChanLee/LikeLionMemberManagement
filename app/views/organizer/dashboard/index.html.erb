@@ -1,0 +1,35 @@
+<div class="fix">
+  <header class="shadow">
+    <%= link_to '멋쟁이 사자처럼', root_path, id: "logo" %>
+    <div class="profile">
+      <div class="wrapper_wide">
+        <div class="avatar"></div>
+        <div class="info">
+          <%= current_user.name %><br>
+          <span class="school"><%= current_user.school.name %></span>
+        </div>
+      </div>
+      <div class="menu">
+        <%= link_to '로그아웃', destroy_user_session_path, method: :delete, data: {confirm: "로그아웃 하시겠습니까?"} %>
+      </div>
+    </div>
+    <nav>
+      <%= link_to raw("<div class='menu_item menu_clicked'>#{image_tag 'dashboard.png'}<div>대시보드</div></div>"), master_dashboard_path %>
+      <%= link_to raw("<div class='menu_item'>#{image_tag 'notice.png'}<div>공지사항</div></div>"), master_notices_path %>
+      <%= link_to raw("<div class='menu_item'>#{image_tag 'school.png'}<div>학교관리</div></div>"), master_schools_path %>
+      <%= link_to raw("<div class='menu_item'>#{image_tag 'people.png'}<div>운영진관리</div></div>"), master_organizers_path %>
+      <%= link_to raw("<div class='menu_item'>#{image_tag 'people.png'}<div>참여생관리</div></div>"), master_members_path %>
+    </nav>
+  </header>
+</div>
+<section>
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Dashboard
+    </div>
+  </div>
+  <article>
+
+
+  </article>
+</section>

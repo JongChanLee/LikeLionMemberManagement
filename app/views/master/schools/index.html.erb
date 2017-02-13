@@ -1,0 +1,40 @@
+<section class="master-schools">
+  <div class="section_header fix shadow">
+    <div class="menu_name">
+      Schools
+    </div>
+    <%= link_to raw("<div class='shadow add'>+</div>"), new_master_school_path %>
+  </div>
+
+  <article class="index">
+    <div class="count shadow">
+      총 학교 : <span><%= @schools.count %></span>개
+    </div>
+
+    <table class="shadow">
+      <thead>
+      <tr>
+        <th>학교</th>
+        <th>운영진</th>
+        <th>참여생</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @schools.each_with_index do |school, index| %>
+          <% if index  % 2 != 0 %>
+              <tr class="even">
+          <% else %>
+              <tr>
+          <% end %>
+
+          <td><%= link_to raw("#{school.name}"), master_school_path(school) %> </td>
+          <td><%= school.users.size %>명</td>
+          <td><%= school.members.size %>명</td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= render 'partial/pagenation' %>
+  </article>
+</section>
